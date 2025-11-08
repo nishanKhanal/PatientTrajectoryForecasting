@@ -8,6 +8,7 @@ import pandas as pd
 import spacy
 from pandarallel import pandarallel
 from spacy.language import Language
+import yaml
 
 from utils.notes import TextPreprocessor, sent_tokenize_rules
 
@@ -98,13 +99,13 @@ def parse_args():
     parser.add_argument(
         "--mimic_notes_file",
         type=str,
-        default="/home/sifal.klioui/physionet/mimic-iv-notes/2.2.1/discharge_summaries.csv",
+        default="/mnt/projects/zhuangyo_project/hope_project_data/mimic/mimic-iv-note/physionet.org/files/mimic-iv-note/2.2/note/discharge.csv",
         help="Path to the MIMIC-IV notes file",
     )
     parser.add_argument(
         "--output_dir",
         type=str,
-        default="/home/sifal.klioui/physionet/",
+        default="/mnt/projects/zhuangyo_project/khanalni/kdd_project/outputData/notes_processed/",
         help="Output directory to save the processed notes",
     )
     parser.add_argument("--clean_text", action="store_true", help="Clean the text")

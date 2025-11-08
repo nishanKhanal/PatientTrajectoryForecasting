@@ -1,16 +1,16 @@
 # Place the mimic-iv & ccs folders in the root folder or edit the line below
 
 # Define root folder
-root_path: /home/sifal.klioui  # Change this!! Root folder for the project
+root_path: /mnt/projects/zhuangyo_project/hope_project_data/mimic  # Change this!! Root folder for the project
 
 # Define output directory
-output_path: PatientTrajectoryForecasting/outputData/  # Output directory for processed data
+output_path: /mnt/projects/zhuangyo_project/khanalni/kdd_project/outputData/  # Output directory for processed data
 
 
 # Paths for MIMIC-IV data
-mimic_iv_path: mimic-iv-2.2  # Path to MIMIC-IV data
+mimic_iv_path: mimic-iv/physionet.org/files/mimiciv/3.1  # Path to MIMIC-IV data
 ccs_path: CSS  # Path to CCS directory
-mimic_iv_notes_path : physionet.org/files/mimic-iv-note/2.2/note/discharge.csv.gz  # Path to MIMIC-IV notes data
+mimic_iv_notes_path : mimic-iv-note/mimicphysionet.org/files/mimic-iv-note/2.2/note/discharge.csv.gz  # Path to MIMIC-IV notes data
 
 # MIMIC-IV data files
 mimic_files:
