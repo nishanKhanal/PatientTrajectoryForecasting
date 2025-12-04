@@ -141,7 +141,7 @@ class TextPreprocessor:
         if self.remove_special_characters_mullenbach:
             note = re.sub("[^A-Za-z0-9]+", " ", note)
         if self.remove_digits:
-            note = note.replace("\d+", "", regex=True)
+            note = re.sub("\d+", "", note)
         if self.remove_adm_details:
             note = re.sub(
                 "admission date:|discharge date:|date of birth:|addendum:|--|__|==",
@@ -256,7 +256,8 @@ def is_inline_title(text):
     return is_title(m.groups()[0])
 
 
-stopwords = set("of", "on", "or")
+# stopwords = set("of", "on", "or")
+stopwords = ["of", "on", "or"]
 
 
 def is_title(text):
