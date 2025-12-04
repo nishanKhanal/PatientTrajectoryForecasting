@@ -119,4 +119,12 @@ wheel                     0.41.2          py311h06a4308_0
 xz                        5.4.6                h5eee18b_0  
 yaml                      0.2.5                h7b6447c_0  
 zlib                      1.2.13               h5eee18b_0  
-zstd                      1.5.5                hc292b87_0  
+zstd                      1.5.5                hc292b87_0
+spacy
+pandarallel
+fsspec  
+datasets
+transformers
+scispacy
+https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_md-0.5.4.tar.gz
+
