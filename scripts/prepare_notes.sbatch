@@ -2,7 +2,7 @@
 #SBATCH --time=5-00:00:00
 #SBATCH --job-name=notes-mimic
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=64
+#SBATCH --cpus-per-task=32
 #SBATCH --gpus-per-task=2
 #SBATCH --output=logs/sbatch/prepare-notes/try.%j
 #SBATCH --mem=64G
@@ -20,5 +20,17 @@ ml cuda/11.8
 source ~/.bashrc
 # Activate a specific conda environment 
 conda activate $kdd_proj_env
+echo $(which python)
 
-python 
+python PatientTrajectoryForecasting/prepare_notes.py \
+    --clean_text \
+    --clean_text \
+    --lower \
+    --remove_special_characters_mullenbach \
+    --remove_special_characters \
+    --remove_digits \
+    --remove_accents \
+    --remove_brackets \
+    --convert_danish_characters \
+    --apply_replace \
+    --remove_adm_details \
