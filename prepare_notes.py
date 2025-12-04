@@ -143,7 +143,7 @@ def parse_args():
 if __name__ == "__main__":
 
     args = parse_args()
-
+    print(args)
     # Load the spaCy model
     nlp = spacy.load("en_core_sci_md", disable=["tagger", "ner"])
     nlp.add_pipe("sbd_component", before="parser")
@@ -151,9 +151,12 @@ if __name__ == "__main__":
     # Load the notes
     start = time.time()
     notes = pd.read_csv(args.mimic_notes_file, keep_default_na=False)
+    # notes = notes.sample(n = 1, random_state=42)  # for testing purpose
 
     print("Number of notes: %d" % len(notes.index))
     notes["ind"] = list(range(len(notes.index)))
+
+    print("Loaded notes from %s" % args.mimic_notes_file)
 
     pandarallel.initialize(progress_bar=True)
     # usefull if have a lot cpu cores, otherwise look into RAPIDS cuDF (pandas on gpu! :O )
@@ -172,6 +175,7 @@ if __name__ == "__main__":
         remove_adm_details=args.remove_adm_details,
     )
 
+    os.makedirs(args.output_dir, exist_ok=True)
     with open(os.path.join(args.output_dir, "notes.txt"), "w") as f:
 
         for text in formatted_notes["text"]:
