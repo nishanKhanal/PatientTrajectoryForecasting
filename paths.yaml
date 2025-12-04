@@ -10,7 +10,7 @@ output_path: /mnt/projects/zhuangyo_project/khanalni/kdd_project/outputData/  # 
 # Paths for MIMIC-IV data
 mimic_iv_path: mimic-iv/physionet.org/files/mimiciv/3.1  # Path to MIMIC-IV data
 ccs_path: CSS  # Path to CCS directory
-mimic_iv_notes_path : mimic-iv-note/mimicphysionet.org/files/mimic-iv-note/2.2/note/discharge.csv.gz  # Path to MIMIC-IV notes data
+mimic_iv_notes_path : mimic-iv-note/physionet.org/files/mimic-iv-note/2.2/note/discharge.csv.gz  # Path to MIMIC-IV notes data
 
 # MIMIC-IV data files
 mimic_files:
